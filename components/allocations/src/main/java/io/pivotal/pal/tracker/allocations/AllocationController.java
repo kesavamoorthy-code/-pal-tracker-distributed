@@ -29,12 +29,13 @@ public class AllocationController {
 
     @PostMapping
     public ResponseEntity<AllocationInfo> create(@RequestBody AllocationForm form) {
-
+        System.out.println("Allocation control : 1");
         if (projectIsActive(form.projectId)) {
+            System.out.println("Allocation control : 2");
             AllocationRecord record = gateway.create(formToFields(form));
             return new ResponseEntity<>(present(record), HttpStatus.CREATED);
         }
-
+        System.out.println("Allocation control : 3");
         return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
@@ -48,7 +49,9 @@ public class AllocationController {
 
 
     private boolean projectIsActive(long projectId) {
+        System.out.println("Allocation control : 1.1");
         ProjectInfo project = client.getProject(projectId);
+        System.out.println("Allocation control : 1.2" + project);
 
         return project != null && project.active;
     }
