@@ -18,7 +18,8 @@ public class ProjectClient {
         System.out.println("getProject(long projectId):" + projectId);
         System.out.println("registrationServerEndpoint:" + registrationServerEndpoint);
         System.out.println("restOperations:" + restOperations);
-
+        ProjectInfo A = restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
+        System.out.println("restOperations.getForObject:" + A);
         return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
     }
 }
