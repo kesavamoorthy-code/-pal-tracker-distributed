@@ -30,6 +30,10 @@ public class AllocationController {
     @PostMapping
     public ResponseEntity<AllocationInfo> create(@RequestBody AllocationForm form) {
         System.out.println("Allocation control : 1");
+        System.out.println("Allocation form.projectid :" + form.projectId);
+        System.out.println("Allocation form.userid :" + form.userId);
+        System.out.println("Allocation form.firstDay :" + form.firstDay);
+        System.out.println("Allocation form.lastDay :" + form.lastDay);
         if (projectIsActive(form.projectId)) {
             System.out.println("Allocation control : 2");
             AllocationRecord record = gateway.create(formToFields(form));
@@ -50,6 +54,7 @@ public class AllocationController {
 
     private boolean projectIsActive(long projectId) {
         System.out.println("Allocation control : 1.1");
+        System.out.println("ProjectID :" + projectId);
         ProjectInfo project = client.getProject(projectId);
         System.out.println("Allocation control : 1.2" + project);
 

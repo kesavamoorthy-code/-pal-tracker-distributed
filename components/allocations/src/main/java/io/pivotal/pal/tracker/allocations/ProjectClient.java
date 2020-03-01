@@ -15,7 +15,10 @@ public class ProjectClient {
     }
 
     public ProjectInfo getProject(long projectId) {
-        System.out.println("Allocation control : 1.5" + restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class) );
+        System.out.println("getProject(long projectId):" + projectId);
+        System.out.println("registrationServerEndpoint:" + registrationServerEndpoint);
+        System.out.println("restOperations:" + restOperations);
+
         return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
     }
 }
