@@ -5,10 +5,12 @@ public class ProjectInfo {
     public final boolean active;
 
     private ProjectInfo() {
+
         this(false);
     }
 
     public ProjectInfo(boolean active) {
+
         this.active = active;
     }
 

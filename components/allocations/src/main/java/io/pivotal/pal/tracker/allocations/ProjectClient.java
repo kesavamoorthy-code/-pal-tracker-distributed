@@ -20,6 +20,7 @@ public class ProjectClient {
         System.out.println("restOperations:" + restOperations);
         ProjectInfo A = restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
         System.out.println("restOperations.getForObject:" + A);
-        return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
+//        return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
+        return restOperations.getForObject(registrationServerEndpoint + "/allocations" , ProjectInfo.class);
     }
 }
