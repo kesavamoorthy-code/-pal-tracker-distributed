@@ -15,10 +15,18 @@ jobs:
           java-version: 11
       - name: Create test database
         run: |
+          chmod 777 gradlew
+          pwd
           mysql -uroot -proot < databases/create_databases.sql
+          chmod 777 gradlew
+          pwd
           ./gradlew testMigrate
       - name: Build with Gradle
-        run: ./gradlew clean build
+#        run: ./gradlew clean build
+        run: |
+          chmod 777 gradlew
+          pwd
+          ./gradlew clean build
       - name: Publish allocations artifact
         uses: actions/upload-artifact@v1
         with:
@@ -172,6 +180,8 @@ jobs:
           cf api "$CF_API_URL"
           cf auth
           cf target -o "$CF_ORG" -s "$CF_SPACE"
+          chmod 777 gradlew
+          pwd
           ./gradlew cfMigrate
         env:
           CF_API_URL: ${{ secrets.CF_API_URL }}
