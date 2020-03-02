@@ -32,6 +32,7 @@ public class ProjectInfo {
 
     @Override
     public String toString() {
+        System.out.println("Projectinfo:" + active );
         return "ProjectInfo{" +
             "active=" + active +
             '}';
