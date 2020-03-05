@@ -7,7 +7,8 @@ applications:
   instances: 1
   env:
 #    REGISTRATION_SERVER_ENDPOINT: http://timesheets-pal-kesav-nagaraj.cfapps.io
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-kesav-nagaraj.cfapps.io
+#    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-kesav-nagaraj.cfapps.io
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-timesheets-database
+  - tracker-service-registry
