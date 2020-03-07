@@ -27,7 +27,7 @@ public class App {
         SpringApplication.run(App.class, args);
     }
 
-    @RefreshScope
+//    @RefreshScope
     @Bean
     ProjectClient projectClient(
         RestOperations restOperations,
